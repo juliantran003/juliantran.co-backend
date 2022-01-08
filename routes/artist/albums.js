@@ -29,7 +29,7 @@ router.post(`/album/create`, async (req, res) => {
     tracks,
     releaseDate,
     credits,
-    sportifyEmbed,
+    spotifyEmbed,
     spotify,
     appleMusic,
     bandcamp,
@@ -50,7 +50,7 @@ router.post(`/album/create`, async (req, res) => {
     }
     if (!urlCheck.test(back)) {
       const result = await cloudinary.uploader.upload(back, {
-        folder: "/articles",
+        folder: "/artist/albums",
       });
       backCover = result.url;
     } else {
@@ -62,7 +62,7 @@ router.post(`/album/create`, async (req, res) => {
       tracks,
       releaseDate,
       credits,
-      sportifyEmbed,
+      spotifyEmbed,
       links: {
         spotify,
         appleMusic,
@@ -77,6 +77,7 @@ router.post(`/album/create`, async (req, res) => {
     res.status(200).json({
       _id: newAlbum._id,
     });
+    console.log("New album created!");
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: error.message });

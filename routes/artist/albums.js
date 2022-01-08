@@ -20,6 +20,17 @@ router.get(`/albums`, async (req, res) => {
   }
 });
 
+// Fetch a specific album
+router.get(`/album/:id`, async (req, res) => {
+  console.log("Using Route : /album/:id");
+  try {
+    const album = await Album.findById(req.params.id);
+    res.status(200).json(album);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
 // Create new album
 router.post(`/album/create`, async (req, res) => {
   console.log("Using Route : /album/create");

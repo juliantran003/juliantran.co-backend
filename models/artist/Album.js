@@ -16,6 +16,7 @@ const Album = mongoose.model("Album", {
     front: String,
     back: String,
   },
+  type: String,
 });
 
 module.exports = Album;

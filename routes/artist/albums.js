@@ -44,6 +44,7 @@ router.post(`/album/create`, async (req, res) => {
     spotify,
     appleMusic,
     bandcamp,
+    type,
   } = req.fields;
   const front = req.files.front ? req.files.front.path : req.fields.front;
   const back = req.files.back ? req.files.back.path : req.fields.back;
@@ -83,6 +84,7 @@ router.post(`/album/create`, async (req, res) => {
         front: frontCover,
         back: backCover,
       },
+      type,
     });
     newAlbum.save();
     res.status(200).json({

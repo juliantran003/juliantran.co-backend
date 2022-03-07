@@ -1,4 +1,3 @@
-// Model for Albums
 const mongoose = require("mongoose");
 
 const Album = mongoose.model("Album", {

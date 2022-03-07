@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Routes
 
 // Artist
-const albumsRoutes = require("./routes/artist/albums");
+const albumsRoutes = require("./routes/albums");
 app.use(albumsRoutes);
 
 // Setup

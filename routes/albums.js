@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Album = require("../../models/artist/Album");
+const Album = require("../../models/Album");
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
